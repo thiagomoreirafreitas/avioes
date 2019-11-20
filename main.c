@@ -7,15 +7,9 @@ struct aviao{
     char destino;
 };
 typedef struct aviao Aviao;
-int main()
-{
+
+void lerDados(int quantidade, Aviao avioes[]){
     int i;
-    int quantidade = 0;
-    
-    printf("Digite quantos cadastros voce ira fazer: ");
-    scanf("%d", &quantidade);
-    Aviao avioes[quantidade]; 
-    
     for(i=0; i<quantidade; i++)
     {
         printf("\nAviao %d\n",i);
@@ -28,7 +22,11 @@ int main()
         printf("Digite destino: ");
         scanf(" %c", &avioes[i].destino);
     }
-    
+}
+
+void imprimeDados(int quantidade, Aviao avioes[]){
+    int i;
+    printf("\nDADOS\n");
     for(i=0; i<quantidade; i++)
     {
         printf("\nAviao %d\n",i);
@@ -37,6 +35,15 @@ int main()
         printf("Origem: %c\n", avioes[i].origem);
         printf("Destino: %c\n", avioes[i].destino);
     }
+}
 
+int main()
+{
+    int quantidade = 0;
+    printf("Digite quantos cadastros voce ira fazer: ");
+    scanf("%d", &quantidade);
+    Aviao avioes[quantidade]; 
+    lerDados(quantidade, avioes);
+    imprimeDados(quantidade, avioes);
     return 0;
 }
