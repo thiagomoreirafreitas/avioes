@@ -33,6 +33,7 @@ int main()
     {
         printf("\nAviao %d\n",i);
         printf("Nome: %s\n", avioes[i].nome);
+        printf("Numero de poltronas: %d\n", avioes[i].poltronas);
         printf("Origem: %c\n", avioes[i].origem);
         printf("Destino: %c\n", avioes[i].destino);
     }
